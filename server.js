@@ -7,6 +7,12 @@ import axios from "axios";
 
 const search_url = "https://api.themoviedb.org/3/search/movie";
 const bearer_token = process.env.API_KEY;
+const config = {
+  headers: {
+    accept: 'application/json',
+    Authorization : ` Bearer ${bearer_token}`
+  }
+};
 
 const app = express();
 const port = 3000;
