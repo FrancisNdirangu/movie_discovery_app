@@ -17,6 +17,8 @@ const config = {
 const app = express();
 const port = 3000;
 
+// setting the static folder in express
+app.use(express.static('public'));
 
 // 1. set the engine which is ejs in this case
 app.set('view engine', 'ejs');
