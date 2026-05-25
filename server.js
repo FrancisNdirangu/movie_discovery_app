@@ -17,6 +17,13 @@ const config = {
 const app = express();
 const port = 3000;
 
+
+// 1. set the engine which is ejs in this case
+app.set('view engine', 'ejs');
+
+// 2. set the folder where your views live
+app.set('views','./public');
+
 app.get("/search", async (req,res) => {
   try {
     const request = await axios.get(search_url,
