@@ -6,6 +6,18 @@ This project is entirely personal and will not be deployed for public use.
 
 The data is pulled from their api.
 
+## Purpose of each folder
+
+The server.js on the home directory is for setting up the api requests and the port number and managing the responses.
+
+The public folder has 3 files: 1 app.js file, 1 index.html and 1 styles.css file.
+
+App.js: is for the javascript code in the website. This is for things like listening to button clicks, or changing colors when a button is hovered on and etc.
+
+index.html: is for the general structure and types of html objects on the website.
+
+styles.css: is for the styling of the html page,the placing of objects and etc.
+
 ## Goal
 
 The goal of this project is to create a webapp that uses a realife webapp.
