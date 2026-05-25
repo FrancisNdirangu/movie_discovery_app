@@ -24,6 +24,10 @@ app.set('view engine', 'ejs');
 // 2. set the folder where your views live
 app.set('views','./public');
 
+app.get("/", (req,res) => {
+  res.render('index');
+});
+
 app.get("/search", async (req,res) => {
   try {
     const request = await axios.get(search_url,
