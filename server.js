@@ -51,7 +51,13 @@ app.post('/submit', async(req, res) => {
     }
   });
   console.log(searchResponse.data);
-  res.json(searchResponse.data);
+  //res.json(searchResponse.data);
+
+  const movieSearchResults = searchResponse.data.results;
+  const totalResults = searchResponse.data.total_results;
+  console.log(movieSearchResults);
+  console.log(`the total number of results ${totalResults}`)
+  res.json(movieSearchResults);
   
 });
 
