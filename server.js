@@ -59,12 +59,15 @@ app.post('/submit', async(req, res) => {
   console.log(movieSearchResults);
   console.log(`the total number of results ${totalResults}`)
   console.log(`the total number of pages ${totalPages}`)
-  res.json(movieSearchResults);
+  // res.json(movieSearchResults);
 
-  Object.entries(movieSearchResults).forEach(([outerKey, { id, title, release_date, poster_path, overview, vote_average, vote_count, original_language }]) => {
-    console.log(`${outerKey}: id=${id}, title=${title}, release_date=${release_date}, poster_path=${poster_path}, overview=${overview}, vote_average=${vote_average}, vote_count=${vote_count}, original_language=${original_language}`)
-  })
-  
+  // Object.entries(movieSearchResults).forEach(([outerKey, { id, title, release_date, poster_path, overview, vote_average, vote_count, original_language }]) => {
+  //   console.log(`${outerKey}: id=${id}, title=${title}, release_date=${release_date}, poster_path=${poster_path}, overview=${overview}, vote_average=${vote_average}, vote_count=${vote_count}, original_language=${original_language}`)
+  // })
+  res.locals.movieSearchResults = movieSearchResults;
+  res.locals.totalResults = totalResults;
+  res.locals.totalPages = totalPages;
+  res.render('results')
 });
 
 app.get("/search", async (req, res) => {
