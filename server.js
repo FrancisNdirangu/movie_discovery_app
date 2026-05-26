@@ -50,13 +50,15 @@ app.post('/submit', async(req, res) => {
       Authorization: ` Bearer ${bearer_token}`
     }
   });
-  console.log(searchResponse.data);
+  //console.log(searchResponse.data);
   //res.json(searchResponse.data);
 
   const movieSearchResults = searchResponse.data.results;
   const totalResults = searchResponse.data.total_results;
+  const totalPages = searchResponse.data.total_pages;
   console.log(movieSearchResults);
   console.log(`the total number of results ${totalResults}`)
+  console.log(`the total number of pages ${totalPages}`)
   res.json(movieSearchResults);
   
 });
