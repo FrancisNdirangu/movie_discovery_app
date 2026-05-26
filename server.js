@@ -60,6 +60,10 @@ app.post('/submit', async(req, res) => {
   console.log(`the total number of results ${totalResults}`)
   console.log(`the total number of pages ${totalPages}`)
   res.json(movieSearchResults);
+
+  Object.entries(movieSearchResults).forEach(([outerKey, { id, title, release_date, poster_path, overview, vote_average, vote_count, original_language }]) => {
+    console.log(`${outerKey}: id=${id}, title=${title}, release_date=${release_date}, poster_path=${poster_path}, overview=${overview}, vote_average=${vote_average}, vote_count=${vote_count}, original_language=${original_language}`)
+  })
   
 });
 
