@@ -38,7 +38,20 @@ app.post('/submit', async(req, res) => {
   // access the form data from index.ejs
   const movieSearched = req.body.movieNameInput;
   console.log(movieSearched);
-  res.send(`Movie searched for: ${movieSearched}`);
+  //res.send(`Movie searched for: ${movieSearched}`);
+  const searchResponse = await axios.get(search_url, {
+    params: {
+      query: movieSearched,
+      include_adult: false,
+      language: "en-US"
+    },
+    headers: {
+      accept: "application/json",
+      Authorization: ` Bearer ${bearer_token}`
+    }
+  });
+  console.log(searchResponse.data);
+  res.json(searchResponse.data);
   
 });
 
