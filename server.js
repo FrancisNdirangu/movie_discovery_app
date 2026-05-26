@@ -67,7 +67,7 @@ app.post('/submit', async(req, res) => {
   res.locals.movieSearchResults = movieSearchResults;
   res.locals.totalResults = totalResults;
   res.locals.totalPages = totalPages;
-  res.render('results')
+  res.render('results');
 });
 
 app.get("/search", async (req, res) => {

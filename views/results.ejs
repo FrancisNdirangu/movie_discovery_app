@@ -10,7 +10,9 @@
     <div class="container">
         <div class="moviePoster">
             <!--send the movie poster to this div, it will be the poster_path and the searchUrl in server.js -->
-           <h1> Movie Name </h1> 
+           <h1> Movie Name <%movieSearchResults.forEach((movie) => {%> </h1> 
+               <h1> <%=movie.title%> </h1>
+           <% }) %>
         </div>
         <div class="movieDetails">
             <!-- send the movie details to this div, it will be the title, release date, and overview from the search response in server.js -->
