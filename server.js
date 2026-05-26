@@ -26,8 +26,20 @@ app.set("view engine", "ejs");
 // 2. set the folder where your views live
 app.set("views", "./views");
 
+// middleware to parse from data 
+app.use(express.urlencoded({ extended: true }));
+
 app.get("/", (req, res) => {
   res.render("index");
+  
+});
+
+app.post('/submit', async(req, res) => {
+  // access the form data from index.ejs
+  const movieSearched = req.body.movieNameInput;
+  console.log(movieSearched);
+  res.send(`Movie searched for: ${movieSearched}`);
+  
 });
 
 app.get("/search", async (req, res) => {
