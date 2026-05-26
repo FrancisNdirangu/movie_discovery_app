@@ -9,15 +9,22 @@
 
     <div class="container">
         <div class="moviePoster">
-            <!--send the movie poster to this div, it will be the poster_path and the searchUrl in server.js -->
-           <h1> Movie Name <%movieSearchResults.forEach((movie) => {%> </h1> 
-               <h1> <%=movie.title%> </h1>
-           <% }) %>
+            <!-- send the movie details to this div, it will be the title, release date, and overview from the search response in server.js -->
+            <% movieSearchResults.forEach((movie) => { %>
+            <img src=<%="https://image.tmdb.org/t/p/w500"+movie.poster_path%> alt=<%=movie.title%> />
+            <% }) %>
         </div>
         <div class="movieDetails">
-            <!-- send the movie details to this div, it will be the title, release date, and overview from the search response in server.js -->
-            <h2> Movie Details </h2>
+            <!--send the movie poster to this div, it will be the poster_path and the searchUrl in server.js -->
+           <h1> Movie Name <%movieSearchResults.forEach((movie) => {%> </h1> 
+               <h3> <%=movie.title%> </h3>
+               <h3> <%=movie.release_date%> </h3>
+               <h3> <%=movie.vote_average%> </h3>              
+               <h3> <%=movie.popularity%> </h3>
+
+           <% }) %>
         </div>
+
     </div>
 </body>
 </html>
